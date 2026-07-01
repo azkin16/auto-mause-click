@@ -46,7 +46,7 @@ const askQuestion = (query) => new Promise(resolve => rl.question(query, resolve
     const browser = await puppeteer.launch({
         headless: false,
         defaultViewport: null,
-        args: ['--start-maximized', '--ignore-certificate-errors']
+        args: ['--start-maximized', '--ignore-certificate-errors', '--no-sandbox', '--disable-setuid-sandbox']
     });
 
     const page = (await browser.pages())[0];
